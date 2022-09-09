@@ -15,4 +15,16 @@ public class CoffeeMachineTest {
 
         verify(drinkMakerClient).make(Drink.TEA);
     }
+
+    @Test
+    public void tea_with_sugar() {
+        DrinkMakerClient drinkMakerClient = mock(DrinkMakerClient.class);
+
+        CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMakerClient);
+        coffeeMachine.tea();
+        coffeeMachine.addSugar();
+        coffeeMachine.make();
+
+        verify(drinkMakerClient).make(Drink.TEA, Sugar.ONE);
+    }
 }
