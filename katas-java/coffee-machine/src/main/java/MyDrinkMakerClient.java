@@ -8,12 +8,17 @@ public class MyDrinkMakerClient implements DrinkMakerClient {
     @Override
     public void make(String tea, Sugar sugar) {
         String sugarAmount = translateSugar(sugar);
+        String stick = translateStick(sugar);
+        drinkMaker.execute("T:" + sugarAmount + ":" + stick);
+    }
+
+    private String translateStick(Sugar sugar) {
         String stick = "";
 
         if (sugar != Sugar.NONE) {
             stick = "0";
         }
-        drinkMaker.execute("T:" + sugarAmount + ":" + stick);
+        return stick;
     }
 
     private String translateSugar(Sugar sugar) {
