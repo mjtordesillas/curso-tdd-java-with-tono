@@ -22,4 +22,14 @@ public class DrinkMakerClientTest {
 
         verify(drinkMaker).execute("T:1:0");
     }
+    @Test
+    public void tea_with_two_sugars() {
+        DrinkMaker drinkMaker = mock(DrinkMaker.class);
+        DrinkMakerClient drinkMakerClient = new MyDrinkMakerClient(drinkMaker);
+
+        drinkMakerClient.make(Drink.TEA, Sugar.TWO);
+
+        verify(drinkMaker).execute("T:2:0");
+    }
+
 }
