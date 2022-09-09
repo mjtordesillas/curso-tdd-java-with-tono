@@ -4,6 +4,7 @@ public class CoffeeMachine {
   private Drink drink;
 
   public CoffeeMachine(DrinkMakerClient drinkMakerClient) {
+
     this.drinkMakerClient = drinkMakerClient;
   }
 
