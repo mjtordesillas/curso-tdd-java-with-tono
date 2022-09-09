@@ -7,8 +7,12 @@ public class CoffeeMachineAcceptanceTest {
 
     @Test
     public void tea_with_sugar() {
+
         DrinkMaker drinkMaker = mock(DrinkMaker.class);
         CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMaker);
+        coffeeMachine.insertMoney(100.0);
+
+        coffeeMachine = givenACoffeeMachineWithEnoughMoney();
 
         coffeeMachine.tea();
         coffeeMachine.addSugar();
@@ -39,5 +43,17 @@ public class CoffeeMachineAcceptanceTest {
         coffeeMachine.make();
 
         verify(drinkMaker).execute("C:2:0");
+    }
+
+    @Test
+    public void not_enough_money_for_a_tea() {
+        DrinkMaker drinkMaker = mock(DrinkMaker.class);
+        CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMaker);
+
+        coffeeMachine.tea();
+        coffeeMachine.insert();
+        coffeeMachine.make();
+
+        verify(drinkMaker).execute("M:");
     }
 }
