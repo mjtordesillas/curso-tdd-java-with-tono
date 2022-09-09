@@ -12,4 +12,7 @@ public class CoffeeMaker {
 
   public void make() {
   }
+
+  public void chocolate() {
+  }
 }
