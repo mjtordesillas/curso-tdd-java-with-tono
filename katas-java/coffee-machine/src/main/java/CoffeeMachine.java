@@ -3,6 +3,7 @@ public class CoffeeMachine {
     private DrinkMaker drinkMaker;
     private DrinkMakerClient drinkMakerClient;
     private Sugar sugar = Sugar.NONE;
+    private String drink = Drink.TEA;
 
     public CoffeeMachine(DrinkMaker drinkMaker) {
         this.drinkMaker = drinkMaker;
@@ -24,10 +25,11 @@ public class CoffeeMachine {
     }
 
     public void make() {
-        drinkMakerClient.make(Drink.TEA, sugar);
+        drinkMakerClient.make(drink, sugar);
     }
 
     public void chocolate() {
+        drink = Drink.CHOCOLATE;
     }
 
     public void coffee() {

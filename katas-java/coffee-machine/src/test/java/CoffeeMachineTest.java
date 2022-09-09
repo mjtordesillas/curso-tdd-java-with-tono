@@ -8,8 +8,8 @@ public class CoffeeMachineTest {
     @Test
     public void just_tea() {
         DrinkMakerClient drinkMakerClient = mock(DrinkMakerClient.class);
-
         CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMakerClient);
+
         coffeeMachine.tea();
         coffeeMachine.make();
 
@@ -19,8 +19,8 @@ public class CoffeeMachineTest {
     @Test
     public void tea_with_sugar() {
         DrinkMakerClient drinkMakerClient = mock(DrinkMakerClient.class);
-
         CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMakerClient);
+
         coffeeMachine.tea();
         coffeeMachine.addSugar();
         coffeeMachine.make();
@@ -31,8 +31,8 @@ public class CoffeeMachineTest {
     @Test
     public void tea_with_two_of_sugar() {
         DrinkMakerClient drinkMakerClient = mock(DrinkMakerClient.class);
-
         CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMakerClient);
+
         coffeeMachine.tea();
         coffeeMachine.addSugar();
         coffeeMachine.addSugar();
@@ -44,8 +44,8 @@ public class CoffeeMachineTest {
     @Test
     public void tea_with_two_of_sugar_even_when_asking_for_more() {
         DrinkMakerClient drinkMakerClient = mock(DrinkMakerClient.class);
-
         CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMakerClient);
+
         coffeeMachine.tea();
         coffeeMachine.addSugar();
         coffeeMachine.addSugar();
@@ -53,5 +53,15 @@ public class CoffeeMachineTest {
         coffeeMachine.make();
 
         verify(drinkMakerClient).make(Drink.TEA, Sugar.TWO);
+    }
+    @Test
+    public void chocolate_without_sugar() {
+        DrinkMakerClient drinkMakerClient = mock(DrinkMakerClient.class);
+        CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMakerClient);
+
+        coffeeMachine.chocolate();
+        coffeeMachine.make();
+
+        verify(drinkMakerClient).make(Drink.CHOCOLATE, Sugar.NONE);
     }
 }
