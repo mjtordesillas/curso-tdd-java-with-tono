@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class CoffeeMachineTest {
 
   @Test
-  public void tea_without_sugar() {
+  public void just_tea() {
     DrinkMaker drinkMaker = mock(DrinkMaker.class);
     CoffeeMaker coffeeMaker = new CoffeeMaker(drinkMaker);
 
