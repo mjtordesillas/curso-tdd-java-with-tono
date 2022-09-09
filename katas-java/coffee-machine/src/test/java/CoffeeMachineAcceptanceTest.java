@@ -9,11 +9,11 @@ public class CoffeeMachineAcceptanceTest {
   @Test
   public void tea_with_sugar() {
     DrinkMaker drinkMaker = mock(DrinkMaker.class);
-    CoffeeMaker coffeeMaker = new CoffeeMaker(drinkMaker);
+    CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMaker);
 
-    coffeeMaker.tea();
-    coffeeMaker.addSugar();
-    coffeeMaker.make();
+    coffeeMachine.tea();
+    coffeeMachine.addSugar();
+    coffeeMachine.make();
 
     verify(drinkMaker).execute("T:1:0");
   }
@@ -21,10 +21,10 @@ public class CoffeeMachineAcceptanceTest {
   @Test
   public void hot_chocolate_without_sugar() {
     DrinkMaker drinkMaker = mock(DrinkMaker.class);
-    CoffeeMaker coffeeMaker = new CoffeeMaker(drinkMaker);
+    CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMaker);
 
-    coffeeMaker.chocolate();
-    coffeeMaker.make();
+    coffeeMachine.chocolate();
+    coffeeMachine.make();
 
     verify(drinkMaker).execute("H::");
   }
@@ -32,12 +32,12 @@ public class CoffeeMachineAcceptanceTest {
   @Test
   public void coffee_with_two_sugars() {
     DrinkMaker drinkMaker = mock(DrinkMaker.class);
-    CoffeeMaker coffeeMaker = new CoffeeMaker(drinkMaker);
+    CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMaker);
 
-    coffeeMaker.coffee();
-    coffeeMaker.addSugar();
-    coffeeMaker.addSugar();
-    coffeeMaker.make();
+    coffeeMachine.coffee();
+    coffeeMachine.addSugar();
+    coffeeMachine.addSugar();
+    coffeeMachine.make();
 
     verify(drinkMaker).execute("C:2:0");
   }
