@@ -2,15 +2,21 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CoffeeMachineTest {
+  DrinkMakerClient drinkMakerClient;
+  CoffeeMachine coffeeMachine;
+
+  @BeforeEach
+  void setUp() {
+    drinkMakerClient = mock(DrinkMakerClient.class);
+    coffeeMachine = new CoffeeMachine(drinkMakerClient);
+  }
 
   @Test
   public void just_tea() {
-    DrinkMakerClient drinkMakerClient = mock(DrinkMakerClient.class);
-    CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMakerClient);
-
     coffeeMachine.tea();
     coffeeMachine.make();
 
@@ -19,9 +25,6 @@ public class CoffeeMachineTest {
 
   @Test
   public void just_coffee() {
-    DrinkMakerClient drinkMakerClient = mock(DrinkMakerClient.class);
-    CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMakerClient);
-
     coffeeMachine.coffee();
     coffeeMachine.make();
 
