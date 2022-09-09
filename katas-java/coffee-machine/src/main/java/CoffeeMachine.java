@@ -16,16 +16,15 @@ public class CoffeeMachine {
     }
 
     public void addSugar() {
-        sugar = Sugar.ONE;
+        if (sugar == Sugar.NONE) {
+            sugar = Sugar.ONE;
+        } else {
+            sugar = Sugar.TWO;
+        }
     }
 
     public void make() {
-        if (sugar == Sugar.NONE) {
-            drinkMakerClient.make(Drink.TEA);
-            return;
-        }
-
-        drinkMakerClient.make(Drink.TEA, Sugar.ONE);
+        drinkMakerClient.make(Drink.TEA, sugar);
     }
 
     public void chocolate() {
