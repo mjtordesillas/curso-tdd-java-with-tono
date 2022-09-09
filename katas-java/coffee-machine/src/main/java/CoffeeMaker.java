@@ -7,7 +7,7 @@ public class CoffeeMaker {
   public void tea() {
   }
 
-  public void sugar() {
+  public void addSugar() {
   }
 
   public void make() {

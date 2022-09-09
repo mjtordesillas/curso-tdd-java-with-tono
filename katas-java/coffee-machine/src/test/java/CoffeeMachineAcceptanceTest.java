@@ -12,7 +12,7 @@ public class CoffeeMachineAcceptanceTest {
     CoffeeMaker coffeeMaker = new CoffeeMaker(drinkMaker);
 
     coffeeMaker.tea();
-    coffeeMaker.sugar();
+    coffeeMaker.addSugar();
     coffeeMaker.make();
 
     verify(drinkMaker).execute("T:1:0");
@@ -35,8 +35,8 @@ public class CoffeeMachineAcceptanceTest {
     CoffeeMaker coffeeMaker = new CoffeeMaker(drinkMaker);
 
     coffeeMaker.coffee();
-    coffeeMaker.sugar();
-    coffeeMaker.sugar();
+    coffeeMaker.addSugar();
+    coffeeMaker.addSugar();
     coffeeMaker.make();
 
     verify(drinkMaker).execute("H::");
