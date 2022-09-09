@@ -13,7 +13,9 @@ public class CoffeeMaker {
   }
 
   public void addSugar() {
-    sugars++;
+    if(sugars < 2) {
+      sugars++;
+    }
   }
 
   public void make() {
@@ -28,5 +30,6 @@ public class CoffeeMaker {
   }
 
   public void coffee() {
+
   }
 }
