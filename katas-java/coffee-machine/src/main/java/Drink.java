@@ -16,7 +16,7 @@ public class Drink {
 
   public void addSugar() {
     if(this.sugarAmount == SugarAmount.NONE) this.sugarAmount = SugarAmount.ONE;
-    else if(sugarAmount == SugarAmount.ONE) this.sugarAmount = SugarAmount.TWO;
+    else this.sugarAmount = SugarAmount.TWO;
   }
 
   @Override

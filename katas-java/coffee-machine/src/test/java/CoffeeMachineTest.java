@@ -57,5 +57,16 @@ public class CoffeeMachineTest {
 
     verify(drinkMakerClient).make(new Drink(DrinkType.CHOCOLATE, SugarAmount.TWO));
   }
+
+  @Test
+  public void drink_with_two_sugars_even_when_asking_for_more() {
+    coffeeMachine.tea();
+    coffeeMachine.addSugar();
+    coffeeMachine.addSugar();
+    coffeeMachine.addSugar();
+    coffeeMachine.make();
+
+    verify(drinkMakerClient).make(new Drink(DrinkType.TEA, SugarAmount.TWO));
+  }
 }
 
