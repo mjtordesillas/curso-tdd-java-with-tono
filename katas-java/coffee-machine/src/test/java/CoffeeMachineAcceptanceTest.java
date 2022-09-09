@@ -29,5 +29,17 @@ public class CoffeeMachineAcceptanceTest {
     verify(drinkMaker).execute("H::");
   }
 
+  @Test
+  public void coffee_with_two_sugars() {
+    DrinkMaker drinkMaker = mock(DrinkMaker.class);
+    CoffeeMaker coffeeMaker = new CoffeeMaker(drinkMaker);
+
+    coffeeMaker.coffee();
+    coffeeMaker.sugar();
+    coffeeMaker.sugar();
+    coffeeMaker.make();
+
+    verify(drinkMaker).execute("H::");
+  }
 
 }

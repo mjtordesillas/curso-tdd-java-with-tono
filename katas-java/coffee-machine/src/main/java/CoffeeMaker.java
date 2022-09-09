@@ -15,4 +15,7 @@ public class CoffeeMaker {
 
   public void chocolate() {
   }
+
+  public void coffee() {
+  }
 }
