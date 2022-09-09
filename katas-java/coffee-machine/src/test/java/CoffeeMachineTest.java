@@ -15,4 +15,29 @@ public class CoffeeMachineTest {
 
     verify(drinkMaker).execute("T::");
   }
+
+  @Test
+  public void tea_with_one_sugar() {
+    DrinkMaker drinkMaker = mock(DrinkMaker.class);
+    CoffeeMaker coffeeMaker = new CoffeeMaker(drinkMaker);
+
+    coffeeMaker.tea();
+    coffeeMaker.addSugar();
+    coffeeMaker.make();
+
+    verify(drinkMaker).execute("T:1:0");
+  }
+
+  @Test
+  public void tea_with_two_sugars() {
+    DrinkMaker drinkMaker = mock(DrinkMaker.class);
+    CoffeeMaker coffeeMaker = new CoffeeMaker(drinkMaker);
+
+    coffeeMaker.tea();
+    coffeeMaker.addSugar();
+    coffeeMaker.addSugar();
+    coffeeMaker.make();
+
+    verify(drinkMaker).execute("T:2:0");
+  }
 }

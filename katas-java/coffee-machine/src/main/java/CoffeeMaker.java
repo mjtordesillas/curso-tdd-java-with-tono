@@ -1,9 +1,11 @@
 public class CoffeeMaker {
 
+  private int sugars;
   private DrinkMaker drinkMaker;
 
   public CoffeeMaker(DrinkMaker drinkMaker) {
     this.drinkMaker = drinkMaker;
+    this.sugars = 0;
   }
 
   public void tea() {
@@ -11,10 +13,15 @@ public class CoffeeMaker {
   }
 
   public void addSugar() {
+    sugars++;
   }
 
   public void make() {
-    drinkMaker.execute("T::");
+    if(sugars > 0 ) {
+      drinkMaker.execute("T:" + sugars + ":0");
+    } else {
+      drinkMaker.execute("T::");
+    }
   }
 
   public void chocolate() {
