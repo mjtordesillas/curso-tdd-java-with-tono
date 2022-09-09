@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CoffeeMachineTest {
+
   DrinkMakerClient drinkMakerClient;
   CoffeeMachine coffeeMachine;
 
@@ -30,4 +31,13 @@ public class CoffeeMachineTest {
 
     verify(drinkMakerClient).make(new Drink(DrinkType.COFFEE));
   }
+
+ @Test
+  public void just_chocolate() {
+    coffeeMachine.chocolate();
+    coffeeMachine.make();
+
+    verify(drinkMakerClient).make(new Drink(DrinkType.CHOCOLATE));
+ }
 }
+
