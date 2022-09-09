@@ -39,7 +39,6 @@ public class CoffeeMachineAcceptanceTest {
     coffeeMaker.addSugar();
     coffeeMaker.make();
 
-    verify(drinkMaker).execute("H::");
+    verify(drinkMaker).execute("C:2:0");
   }
-
 }
