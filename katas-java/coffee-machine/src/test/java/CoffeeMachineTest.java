@@ -1,11 +1,19 @@
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.Test;
 
 public class CoffeeMachineTest {
 
   @Test
-  public void fix_me_and_rename_me() {
-    assertTrue(false);
+  public void just_tea() {
+    DrinkMakerClient drinkMakerClient = mock(DrinkMakerClient.class);
+    CoffeeMachine coffeeMachine = new CoffeeMachine(drinkMakerClient);
+
+    coffeeMachine.tea();
+    coffeeMachine.make();
+
+    verify(drinkMakerClient).make(new Drink(DrinkType.TEA));
   }
 }
