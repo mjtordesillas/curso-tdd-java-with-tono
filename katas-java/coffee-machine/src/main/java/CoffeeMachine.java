@@ -1,12 +1,11 @@
 public class CoffeeMachine {
 
-    private DrinkMaker drinkMaker;
     private DrinkMakerClient drinkMakerClient;
     private Sugar sugar = Sugar.NONE;
     private String drink = Drink.TEA;
 
     public CoffeeMachine(DrinkMaker drinkMaker) {
-        this.drinkMaker = drinkMaker;
+        this.drinkMakerClient = new MyDrinkMakerClient(drinkMaker);
     }
 
     public CoffeeMachine(DrinkMakerClient drinkMakerClient) {

@@ -7,6 +7,11 @@ public class MyDrinkMakerClient implements DrinkMakerClient {
 
     @Override
     public void make(String tea, Sugar sugar) {
+        if (sugar == Sugar.ONE) {
+            drinkMaker.execute("T:1:0");
+            return;
+        }
+
         drinkMaker.execute("T::");
     }
 }
