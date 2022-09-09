@@ -1,9 +1,30 @@
 import org.junit.jupiter.api.Test;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class CoffeeMachineTest {
+
+
+
+    @Test
+    public void just_tea_xx() {
+        DrinkMaker drinkMaker = mock(DrinkMaker.class);
+        CoffeeMaker coffeeMaker = new CoffeeMaker(drinkMaker);
+        DrinkMakerProtocol drinkMakerProtocol = mock(DrinkMakerProtocol.class);
+        when(drinkMakerProtocol.translate() ).thenReturn("T::");
+
+
+        coffeeMaker.tea();
+        coffeeMaker.make();
+
+        drinkMakerProtocol.tea();
+        coffeeMaker.make();
+
+        verify(drinkMakerProtocol).translate(Drink.TEA, Sugar.count);
+        verify(drinkMaker).execute(any());
+    }
 
     @Test
     public void just_tea() {
