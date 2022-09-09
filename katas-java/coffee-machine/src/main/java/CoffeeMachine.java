@@ -1,25 +1,30 @@
 public class CoffeeMachine {
 
-  public CoffeeMachine(DrinkMaker drinkMaker) {
+    private DrinkMaker drinkMaker;
+    private DrinkMakerProtocol drinkMakerProtocol;
 
-  }
+    public CoffeeMachine(DrinkMaker drinkMaker) {
+        this.drinkMaker = drinkMaker;
+    }
 
-  public CoffeeMachine(DrinkMaker drinkMaker, DrinkMakerProtocol drinkMakerProtocol) {
+    public CoffeeMachine(DrinkMaker drinkMaker, DrinkMakerProtocol drinkMakerProtocol) {
+        this.drinkMaker = drinkMaker;
+        this.drinkMakerProtocol = drinkMakerProtocol;
+    }
 
-  }
+    public void tea() {
+    }
 
-  public void tea() {
-  }
+    public void addSugar() {
+    }
 
-  public void addSugar() {
-  }
+    public void make() {
+      drinkMaker.execute(drinkMakerProtocol.translate(Drink.TEA));
+    }
 
-  public void make() {
-  }
+    public void chocolate() {
+    }
 
-  public void chocolate() {
-  }
-
-  public void coffee() {
-  }
+    public void coffee() {
+    }
 }
