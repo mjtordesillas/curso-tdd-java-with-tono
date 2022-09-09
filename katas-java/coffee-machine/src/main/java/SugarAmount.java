@@ -1,3 +1,3 @@
 public enum SugarAmount {
-  NONE, ONE
+  NONE, TWO, ONE
 }
