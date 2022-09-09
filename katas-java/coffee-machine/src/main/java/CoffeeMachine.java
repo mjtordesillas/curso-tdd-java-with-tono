@@ -1,6 +1,7 @@
 public class CoffeeMachine {
 
   private DrinkMakerClient drinkMakerClient;
+  private Drink drink;
 
   public CoffeeMachine(DrinkMakerClient drinkMakerClient) {
 
@@ -8,9 +9,14 @@ public class CoffeeMachine {
   }
 
   public void tea() {
+    drink = new Drink(DrinkType.TEA);
+  }
+
+  public void coffee() {
+    drink = new Drink(DrinkType.COFFEE);
   }
 
   public void make() {
-    drinkMakerClient.make(new Drink(DrinkType.TEA));
+    drinkMakerClient.make(drink);
   }
 }
