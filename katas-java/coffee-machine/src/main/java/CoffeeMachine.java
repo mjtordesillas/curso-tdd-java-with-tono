@@ -20,6 +20,10 @@ public class CoffeeMachine {
     drink = new Drink(DrinkType.CHOCOLATE);
   }
 
+  public void addSugar() {
+    drink.addSugar();
+  }
+
   public void make() {
     drinkMakerClient.make(drink);
   }
