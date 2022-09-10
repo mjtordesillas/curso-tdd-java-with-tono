@@ -16,7 +16,8 @@ public class MyDrinkMakerClient implements DrinkMakerClient {
 
   private String translateSugarAmount(Drink drink) {
     if (drink.sugarAmount() == SugarAmount.NONE) return "";
-    else return "1";
+    if (drink.sugarAmount() == SugarAmount.ONE) return "1";
+    return "2";
   }
 
   private String translateDrink(Drink drink) {
