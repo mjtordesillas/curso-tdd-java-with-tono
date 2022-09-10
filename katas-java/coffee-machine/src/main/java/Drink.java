@@ -47,4 +47,8 @@ public class Drink {
   public DrinkType type() {
     return this.drinkType;
   }
+
+  public SugarAmount sugarAmount() {
+    return this.sugarAmount;
+  }
 }
