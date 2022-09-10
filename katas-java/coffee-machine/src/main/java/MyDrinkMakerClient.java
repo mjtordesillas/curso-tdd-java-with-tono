@@ -6,6 +6,11 @@ public class MyDrinkMakerClient implements DrinkMakerClient {
 
   @Override
   public void make(Drink drink) {
-    drinkMaker.execute("T::");
+    drinkMaker.execute(translateDrink(drink) +"::");
+  }
+
+  private String translateDrink(Drink drink) {
+    if (drink.type() == DrinkType.TEA) return "T";
+    else return "C";
   }
 }

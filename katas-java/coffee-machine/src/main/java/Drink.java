@@ -43,4 +43,8 @@ public class Drink {
            ", sugarAmount=" + sugarAmount +
            '}';
   }
+
+  public DrinkType type() {
+    return this.drinkType;
+  }
 }
