@@ -11,6 +11,7 @@ public class MyDrinkMakerClient implements DrinkMakerClient {
 
   private String translateDrink(Drink drink) {
     if (drink.type() == DrinkType.TEA) return "T";
+    if (drink.type() == DrinkType.CHOCOLATE) return "H";
     else return "C";
   }
 }

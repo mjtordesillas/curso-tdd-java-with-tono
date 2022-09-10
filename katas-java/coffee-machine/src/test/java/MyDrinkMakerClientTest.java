@@ -25,4 +25,14 @@ public class MyDrinkMakerClientTest {
     verify(drinkMaker).execute("C::");
   }
 
+  @Test
+  public void just_chocolate(){
+    DrinkMaker drinkMaker = mock(DrinkMaker.class);
+    DrinkMakerClient drinkMakerClient = new MyDrinkMakerClient(drinkMaker);
+
+    drinkMakerClient.make(new Drink(DrinkType.CHOCOLATE));
+
+    verify(drinkMaker).execute("H::");
+  }
+
 }
