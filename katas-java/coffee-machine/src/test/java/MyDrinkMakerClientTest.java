@@ -65,4 +65,20 @@ public class MyDrinkMakerClientTest {
     verify(drinkMaker).execute("M:You are 20 cents short");
   }
 
+  @Test
+  public void extra_hot_drink() {
+    DrinkMaker drinkMaker = mock(DrinkMaker.class);
+    DrinkMakerClient drinkMakerClient = new MyDrinkMakerClient(drinkMaker);
+
+    drinkMakerClient.make(extraHotChocolate());
+
+    verify(drinkMaker).execute("Hh::");
+  }
+
+  private Drink extraHotChocolate() {
+    Drink extraHotChocolate = Drink.chocolate();
+    extraHotChocolate.makeExtraHot();
+    return extraHotChocolate;
+  }
+
 }

@@ -26,6 +26,15 @@ public class MyDrinkMakerClient implements DrinkMakerClient {
   }
 
   private String translateDrink(Drink drink) {
+    return translateDrinkSymbol(drink) + translateExtraHot(drink);
+  }
+
+  private String translateExtraHot(Drink drink) {
+    if(drink.isExtraHot()) return "h";
+    else return "";
+  }
+
+  private String translateDrinkSymbol(Drink drink) {
     if (drink.type() == DrinkType.TEA) return "T";
     if (drink.type() == DrinkType.CHOCOLATE) return "H";
     else return "C";

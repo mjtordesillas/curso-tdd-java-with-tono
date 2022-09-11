@@ -94,4 +94,8 @@ public class Drink {
   public void makeExtraHot() {
     this.extraHot = true;
   }
+
+  public boolean isExtraHot() {
+    return this.extraHot;
+  }
 }
