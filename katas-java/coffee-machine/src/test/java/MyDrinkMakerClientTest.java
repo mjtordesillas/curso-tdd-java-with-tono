@@ -55,4 +55,14 @@ public class MyDrinkMakerClientTest {
     verify(drinkMaker).execute("C:2:0");
   }
 
+  @Test
+  public void when_short_on_money_send_message_with_missing_amount() {
+    DrinkMaker drinkMaker = mock(DrinkMaker.class);
+    DrinkMakerClient drinkMakerClient = new MyDrinkMakerClient(drinkMaker);
+
+    drinkMakerClient.warnShortOnMoney(20);
+
+    verify(drinkMaker).execute("M:You are 20 cents short");
+  }
+
 }

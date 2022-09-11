@@ -11,7 +11,7 @@ public class MyDrinkMakerClient implements DrinkMakerClient {
 
   @Override
   public void warnShortOnMoney(Integer amountShort) {
-
+    drinkMaker.execute("M:You are " + amountShort + " cents short");
   }
 
   private String translateStick(Drink drink) {
