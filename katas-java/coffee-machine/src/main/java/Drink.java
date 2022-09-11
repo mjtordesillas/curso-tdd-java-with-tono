@@ -7,8 +7,7 @@ public class Drink {
   private boolean extraHot = false;
 
   private Drink(DrinkType drinkType) {
-    this.drinkType = drinkType;
-    this.sugarAmount = SugarAmount.NONE;
+    this(drinkType, SugarAmount.NONE);
   }
 
   private Drink(DrinkType drinkType, SugarAmount sugarAmount) {
