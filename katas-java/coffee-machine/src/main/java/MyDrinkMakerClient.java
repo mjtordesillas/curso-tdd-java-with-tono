@@ -9,6 +9,11 @@ public class MyDrinkMakerClient implements DrinkMakerClient {
     drinkMaker.execute(translateDrink(drink) + ":" + translateSugarAmount(drink) + ":" + translateStick(drink));
   }
 
+  @Override
+  public void warnShortOnMoney(Integer amountShort) {
+
+  }
+
   private String translateStick(Drink drink) {
     if(drink.sugarAmount() == SugarAmount.NONE) return "";
     return "0";

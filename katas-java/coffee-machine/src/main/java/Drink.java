@@ -79,4 +79,10 @@ public class Drink {
   public SugarAmount sugarAmount() {
     return this.sugarAmount;
   }
+
+  public Integer price() {
+    if(this.drinkType == DrinkType.TEA) return 40;
+    if(this.drinkType == DrinkType.CHOCOLATE) return 50;
+    return 60;
+  }
 }

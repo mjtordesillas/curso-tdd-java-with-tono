@@ -2,10 +2,11 @@ public class CoffeeMachine {
 
   private DrinkMakerClient drinkMakerClient;
   private Drink drink;
+  private Integer moneyAmountInMachine;
 
   public CoffeeMachine(DrinkMakerClient drinkMakerClient) {
-
     this.drinkMakerClient = drinkMakerClient;
+    this.moneyAmountInMachine = 0;
   }
 
   public void tea() {
@@ -25,6 +26,14 @@ public class CoffeeMachine {
   }
 
   public void make() {
-    drinkMakerClient.make(drink);
+    if(moneyAmountInMachine >= drink.price()) {
+      drinkMakerClient.make(drink);
+    } else {
+      drinkMakerClient.warnShortOnMoney(drink.price() - moneyAmountInMachine);
+    }
+  }
+
+  public void insertMoney(Integer amountInserted) {
+    moneyAmountInMachine = moneyAmountInMachine + amountInserted;
   }
 }

@@ -17,6 +17,7 @@ public class CoffeeMachineTest {
 
   @Test
   public void just_tea() {
+    coffeeMachine.insertMoney(40);
     coffeeMachine.tea();
     coffeeMachine.make();
 
@@ -25,6 +26,7 @@ public class CoffeeMachineTest {
 
   @Test
   public void just_coffee() {
+    coffeeMachine.insertMoney(60);
     coffeeMachine.coffee();
     coffeeMachine.make();
 
@@ -33,6 +35,7 @@ public class CoffeeMachineTest {
 
  @Test
   public void just_chocolate() {
+   coffeeMachine.insertMoney(50);
     coffeeMachine.chocolate();
     coffeeMachine.make();
 
@@ -40,6 +43,7 @@ public class CoffeeMachineTest {
   }
   @Test
   public void drink_with_one_sugar() {
+    coffeeMachine.insertMoney(60);
     coffeeMachine.coffee();
     coffeeMachine.addSugar();
     coffeeMachine.make();
@@ -49,6 +53,7 @@ public class CoffeeMachineTest {
 
   @Test
   public void drink_with_two_sugars() {
+    coffeeMachine.insertMoney(50);
     coffeeMachine.chocolate();
     coffeeMachine.addSugar();
     coffeeMachine.addSugar();
@@ -59,6 +64,7 @@ public class CoffeeMachineTest {
 
   @Test
   public void drink_with_two_sugars_even_when_asking_for_more() {
+    coffeeMachine.insertMoney(40);
     coffeeMachine.tea();
     coffeeMachine.addSugar();
     coffeeMachine.addSugar();
@@ -66,6 +72,16 @@ public class CoffeeMachineTest {
     coffeeMachine.make();
 
     verify(drinkMakerClient).make(Drink.tea(SugarAmount.TWO));
+  }
+
+  @Test
+  public void message_drink_maker_when_short_on_money() {
+    coffeeMachine.insertMoney(39);
+    coffeeMachine.tea();
+    coffeeMachine.make();
+
+    Integer amountShort = 1;
+    verify(drinkMakerClient).warnShortOnMoney(amountShort);
   }
 }
 
