@@ -39,6 +39,10 @@ public class Drink {
     return new Drink(DrinkType.TEA, sugarAmount);
   }
 
+  public static Drink orangeJuice() {
+    return new Drink(DrinkType.ORANGE_JUICE);
+  }
+
   public void addSugar() {
     if (this.sugarAmount == SugarAmount.NONE) {
       this.sugarAmount = SugarAmount.ONE;

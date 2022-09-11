@@ -41,6 +41,16 @@ public class CoffeeMachineTest {
 
     verify(drinkMakerClient).make(Drink.chocolate());
   }
+
+  @Test
+  public void just_orange_juice() {
+    coffeeMachine.insertMoney(60);
+    coffeeMachine.orangeJuice();
+    coffeeMachine.make();
+
+    verify(drinkMakerClient).make(Drink.orangeJuice());
+  }
+
   @Test
   public void drink_with_one_sugar() {
     coffeeMachine.insertMoney(60);

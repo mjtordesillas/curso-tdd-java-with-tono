@@ -36,4 +36,8 @@ public class CoffeeMachine {
   public void insertMoney(Integer amountInserted) {
     moneyAmountInMachine = moneyAmountInMachine + amountInserted;
   }
+
+  public void orangeJuice() {
+    this.drink = Drink.orangeJuice();
+  }
 }
