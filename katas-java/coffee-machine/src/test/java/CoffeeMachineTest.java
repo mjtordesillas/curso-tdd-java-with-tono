@@ -93,5 +93,21 @@ public class CoffeeMachineTest {
     Integer amountShort = 1;
     verify(drinkMakerClient).warnShortOnMoney(amountShort);
   }
+
+  @Test
+  public void extra_hot_drink() {
+    coffeeMachine.insertMoney(40);
+    coffeeMachine.tea();
+    coffeeMachine.extraHot();
+    coffeeMachine.make();
+
+    verify(drinkMakerClient).make(extraHotTea());
+  }
+
+  private Drink extraHotTea() {
+    Drink extraHotTea = Drink.tea();
+    extraHotTea.makeExtraHot();
+    return extraHotTea;
+  }
 }
 

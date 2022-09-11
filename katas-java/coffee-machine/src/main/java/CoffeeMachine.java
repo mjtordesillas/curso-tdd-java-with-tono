@@ -40,4 +40,8 @@ public class CoffeeMachine {
   public void orangeJuice() {
     this.drink = Drink.orangeJuice();
   }
+
+  public void extraHot() {
+    this.drink.makeExtraHot();
+  }
 }

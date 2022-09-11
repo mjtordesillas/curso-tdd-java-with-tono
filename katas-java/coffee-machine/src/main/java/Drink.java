@@ -4,6 +4,7 @@ public class Drink {
 
   private DrinkType drinkType;
   private SugarAmount sugarAmount;
+  private boolean extraHot = false;
 
   private Drink(DrinkType drinkType) {
     this.drinkType = drinkType;
@@ -60,12 +61,12 @@ public class Drink {
       return false;
     }
     Drink drink = (Drink) o;
-    return drinkType == drink.drinkType && sugarAmount == drink.sugarAmount;
+    return extraHot == drink.extraHot && drinkType == drink.drinkType && sugarAmount == drink.sugarAmount;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(drinkType, sugarAmount);
+    return Objects.hash(drinkType, sugarAmount, extraHot);
   }
 
   @Override
@@ -73,6 +74,7 @@ public class Drink {
     return "Drink{" +
            "drinkType=" + drinkType +
            ", sugarAmount=" + sugarAmount +
+           ", extraHot=" + extraHot +
            '}';
   }
 
@@ -88,5 +90,9 @@ public class Drink {
     if(this.drinkType == DrinkType.TEA) return 40;
     if(this.drinkType == DrinkType.CHOCOLATE) return 50;
     return 60;
+  }
+
+  public void makeExtraHot() {
+    this.extraHot = true;
   }
 }
