@@ -6,51 +6,51 @@ import org.junit.jupiter.api.Test;
 public class MyDrinkMakerClientTest {
 
   @Test
-  public void just_tea(){
+  public void just_tea() {
     DrinkMaker drinkMaker = mock(DrinkMaker.class);
     DrinkMakerClient drinkMakerClient = new MyDrinkMakerClient(drinkMaker);
 
-    drinkMakerClient.make(new Drink(DrinkType.TEA));
+    drinkMakerClient.make(Drink.tea());
 
     verify(drinkMaker).execute("T::");
   }
 
   @Test
-  public void just_coffee(){
+  public void just_coffee() {
     DrinkMaker drinkMaker = mock(DrinkMaker.class);
     DrinkMakerClient drinkMakerClient = new MyDrinkMakerClient(drinkMaker);
 
-    drinkMakerClient.make(new Drink(DrinkType.COFFEE));
+    drinkMakerClient.make(Drink.coffee());
 
     verify(drinkMaker).execute("C::");
   }
 
   @Test
-  public void just_chocolate(){
+  public void just_chocolate() {
     DrinkMaker drinkMaker = mock(DrinkMaker.class);
     DrinkMakerClient drinkMakerClient = new MyDrinkMakerClient(drinkMaker);
 
-    drinkMakerClient.make(new Drink(DrinkType.CHOCOLATE));
+    drinkMakerClient.make(Drink.chocolate());
 
     verify(drinkMaker).execute("H::");
   }
 
   @Test
-  public void drink_with_one_sugar(){
+  public void drink_with_one_sugar() {
     DrinkMaker drinkMaker = mock(DrinkMaker.class);
     DrinkMakerClient drinkMakerClient = new MyDrinkMakerClient(drinkMaker);
 
-    drinkMakerClient.make(new Drink(DrinkType.CHOCOLATE, SugarAmount.ONE));
+    drinkMakerClient.make(Drink.chocolate(SugarAmount.ONE));
 
     verify(drinkMaker).execute("H:1:0");
   }
 
   @Test
-  public void drink_with_two_sugars(){
+  public void drink_with_two_sugars() {
     DrinkMaker drinkMaker = mock(DrinkMaker.class);
     DrinkMakerClient drinkMakerClient = new MyDrinkMakerClient(drinkMaker);
 
-    drinkMakerClient.make(new Drink(DrinkType.COFFEE, SugarAmount.TWO));
+    drinkMakerClient.make(Drink.coffee(SugarAmount.TWO));
 
     verify(drinkMaker).execute("C:2:0");
   }

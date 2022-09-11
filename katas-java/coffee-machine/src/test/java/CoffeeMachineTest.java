@@ -20,7 +20,7 @@ public class CoffeeMachineTest {
     coffeeMachine.tea();
     coffeeMachine.make();
 
-    verify(drinkMakerClient).make(new Drink(DrinkType.TEA));
+    verify(drinkMakerClient).make(Drink.tea());
   }
 
   @Test
@@ -28,7 +28,7 @@ public class CoffeeMachineTest {
     coffeeMachine.coffee();
     coffeeMachine.make();
 
-    verify(drinkMakerClient).make(new Drink(DrinkType.COFFEE));
+    verify(drinkMakerClient).make(Drink.coffee());
   }
 
  @Test
@@ -36,7 +36,7 @@ public class CoffeeMachineTest {
     coffeeMachine.chocolate();
     coffeeMachine.make();
 
-    verify(drinkMakerClient).make(new Drink(DrinkType.CHOCOLATE));
+    verify(drinkMakerClient).make(Drink.chocolate());
   }
   @Test
   public void drink_with_one_sugar() {
@@ -44,7 +44,7 @@ public class CoffeeMachineTest {
     coffeeMachine.addSugar();
     coffeeMachine.make();
 
-    verify(drinkMakerClient).make(new Drink(DrinkType.COFFEE, SugarAmount.ONE));
+    verify(drinkMakerClient).make(Drink.coffee(SugarAmount.ONE));
   }
 
   @Test
@@ -54,7 +54,7 @@ public class CoffeeMachineTest {
     coffeeMachine.addSugar();
     coffeeMachine.make();
 
-    verify(drinkMakerClient).make(new Drink(DrinkType.CHOCOLATE, SugarAmount.TWO));
+    verify(drinkMakerClient).make(Drink.chocolate(SugarAmount.TWO));
   }
 
   @Test
@@ -65,7 +65,7 @@ public class CoffeeMachineTest {
     coffeeMachine.addSugar();
     coffeeMachine.make();
 
-    verify(drinkMakerClient).make(new Drink(DrinkType.TEA, SugarAmount.TWO));
+    verify(drinkMakerClient).make(Drink.tea(SugarAmount.TWO));
   }
 }
 

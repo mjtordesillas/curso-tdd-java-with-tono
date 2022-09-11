@@ -9,15 +9,15 @@ public class CoffeeMachine {
   }
 
   public void tea() {
-    drink = new Drink(DrinkType.TEA);
+    drink = Drink.tea();
   }
 
   public void coffee() {
-    drink = new Drink(DrinkType.COFFEE);
+    drink = Drink.coffee();
   }
 
   public void chocolate() {
-    drink = new Drink(DrinkType.CHOCOLATE);
+    drink = Drink.chocolate();
   }
 
   public void addSugar() {

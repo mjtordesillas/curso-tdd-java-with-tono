@@ -5,18 +5,46 @@ public class Drink {
   private DrinkType drinkType;
   private SugarAmount sugarAmount;
 
-  public Drink(DrinkType drinkType) {this.drinkType = drinkType;
-  this.sugarAmount = SugarAmount.NONE;
+  private Drink(DrinkType drinkType) {
+    this.drinkType = drinkType;
+    this.sugarAmount = SugarAmount.NONE;
   }
 
-  public Drink(DrinkType drinkType, SugarAmount sugarAmount) {
+  private Drink(DrinkType drinkType, SugarAmount sugarAmount) {
     this.drinkType = drinkType;
     this.sugarAmount = sugarAmount;
   }
 
+  public static Drink tea() {
+    return new Drink(DrinkType.TEA);
+  }
+
+  public static Drink coffee() {
+    return new Drink(DrinkType.COFFEE);
+  }
+
+  public static Drink chocolate() {
+    return new Drink(DrinkType.CHOCOLATE);
+  }
+
+  public static Drink coffee(SugarAmount sugarAmount) {
+    return new Drink(DrinkType.COFFEE, sugarAmount);
+  }
+
+  public static Drink chocolate(SugarAmount sugarAmount) {
+    return new Drink(DrinkType.CHOCOLATE, sugarAmount);
+  }
+
+  public static Drink tea(SugarAmount sugarAmount) {
+    return new Drink(DrinkType.TEA, sugarAmount);
+  }
+
   public void addSugar() {
-    if(this.sugarAmount == SugarAmount.NONE) this.sugarAmount = SugarAmount.ONE;
-    else this.sugarAmount = SugarAmount.TWO;
+    if (this.sugarAmount == SugarAmount.NONE) {
+      this.sugarAmount = SugarAmount.ONE;
+    } else {
+      this.sugarAmount = SugarAmount.TWO;
+    }
   }
 
   @Override
