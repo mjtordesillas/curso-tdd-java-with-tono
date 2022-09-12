@@ -39,6 +39,15 @@ public class FizzBuzzTest {
 	}
 
 	@Test
+	public void fifteen_is_fizzbuzz(){
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
+
+		assertThat(fizzbuzzed.get(14), is("FizzBuzz"));
+	}
+
+	@Test
 	public void fizzbuzz_returns_a_hundred_numbers() {
 		FizzBuzz fizzBuzz = new FizzBuzz();
 
