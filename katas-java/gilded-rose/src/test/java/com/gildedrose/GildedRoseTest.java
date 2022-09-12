@@ -55,6 +55,16 @@ public class GildedRoseTest {
 
     assertEquals(agedBrie.quality, 4);
   }
+  @Test
+  public void aged_brie_increases_quality_twice_as_fast_once_expired() {
+    Item agedBrie = new Item("Aged Brie", -1, 3);
+    GildedRose app = new GildedRose(new Item[]{agedBrie});
+
+    app.updateQuality();
+
+    assertEquals(agedBrie.quality, 5);
+  }
+
 
 
   private Item regularItem(int sellIn, int quality) {
