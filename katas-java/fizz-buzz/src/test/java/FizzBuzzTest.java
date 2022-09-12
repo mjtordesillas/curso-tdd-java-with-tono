@@ -39,12 +39,13 @@ public class FizzBuzzTest {
 	}
 
 	@Test
-	public void fifteen_is_fizzbuzz(){
+	public void multiples_of_three_and_five_are_fizzbuzz(){
 		FizzBuzz fizzBuzz = new FizzBuzz();
 
 		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
 
 		assertThat(fizzbuzzed.get(14), is("FizzBuzz"));
+		assertThat(fizzbuzzed.get(89), is("FizzBuzz"));
 	}
 
 	@Test
