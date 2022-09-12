@@ -19,21 +19,13 @@ public class FizzBuzzTest {
 	}
 
 	@Test
-	public void three_is_fizz(){
+	public void multiples_of_three_are_fizz(){
 		FizzBuzz fizzBuzz = new FizzBuzz();
 
 		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
 
 		assertThat(fizzbuzzed.get(2), is("Fizz"));
-	}
-
-	@Test
-	public void nine_is_fizz(){
-		FizzBuzz fizzBuzz = new FizzBuzz();
-
-		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
-
-		assertThat(fizzbuzzed.get(8), is("Fizz"));
+		assertThat(fizzbuzzed.get(98), is("Fizz"));
 	}
 
 	@Test
