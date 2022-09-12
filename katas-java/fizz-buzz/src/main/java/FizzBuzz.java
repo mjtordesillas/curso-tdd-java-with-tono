@@ -5,13 +5,17 @@ public class FizzBuzz {
   public List<String> fizzBuzzle() {
     List<String> fizzBuzzed = new ArrayList<String>();
     for(Integer number = 1; number <= 100; number++) {
-      if(number == 15) fizzBuzzed.add("FizzBuzz");
+      if(isFizzBuzz(number)) fizzBuzzed.add("FizzBuzz");
       else if(isFizz(number)) fizzBuzzed.add("Fizz");
       else if(isBuzz(number)) fizzBuzzed.add("Buzz");
       else fizzBuzzed.add(number.toString());
     }
 
     return fizzBuzzed;
+  }
+
+  private boolean isFizzBuzz(int number) {
+    return number == 15;
   }
 
   private boolean isBuzz(Integer number) {
