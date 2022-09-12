@@ -28,6 +28,15 @@ public class FizzBuzzTest {
 	}
 
 	@Test
+	public void nine_is_fizz(){
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
+
+		assertThat(fizzbuzzed.get(8), is("Fizz"));
+	}
+
+	@Test
 	public void five_is_buzz(){
 		FizzBuzz fizzBuzz = new FizzBuzz();
 
