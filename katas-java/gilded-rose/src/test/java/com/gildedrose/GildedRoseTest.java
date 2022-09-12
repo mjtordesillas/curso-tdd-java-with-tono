@@ -105,6 +105,16 @@ public class GildedRoseTest {
     assertEquals(0, passes.quality);
   }
 
+  @Test
+  public void backstage_passes_increase_in_value_a_lot_just_before_the_concert() {
+    Item passes = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 25);
+    GildedRose app = new GildedRose(new Item[]{passes});
+
+    app.updateQuality();
+
+    assertEquals(28, passes.quality);
+  }
+
 
 
   private Item regularItem(int sellIn, int quality) {
