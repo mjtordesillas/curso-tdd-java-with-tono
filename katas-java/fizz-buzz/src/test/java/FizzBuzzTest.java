@@ -44,4 +44,13 @@ public class FizzBuzzTest {
 
 		assertThat(fizzbuzzed.get(4), is("Buzz"));
 	}
+
+	@Test
+	public void ten_is_buzz(){
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
+
+		assertThat(fizzbuzzed.get(9), is("Buzz"));
+	}
 }
