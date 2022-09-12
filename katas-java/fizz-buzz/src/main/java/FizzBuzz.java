@@ -19,10 +19,27 @@ public class FizzBuzz {
   }
 
   private boolean isBuzz(Integer number) {
-    return number % 5 == 0 || number.toString().contains("5");
+    return isMultipleOfFive(number) || containsFive(number);
   }
 
   private boolean isFizz(Integer number) {
-    return number % 3 == 0 || number.toString().contains("3");
+    return isMultipleOfThree(number) || containsThree(number);
   }
+
+  private boolean containsThree(Comparable<Integer> number) {
+    return number.toString().contains("3");
+  }
+
+  private boolean isMultipleOfThree(int number) {
+    return number % 3 == 0;
+  }
+
+  private boolean isMultipleOfFive(int number) {
+    return number % 5 == 0;
+  }
+
+  private boolean containsFive(Comparable<Integer> number) {
+    return number.toString().contains("5");
+  }
+
 }
