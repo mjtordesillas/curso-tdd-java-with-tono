@@ -29,31 +29,14 @@ public class FizzBuzzTest {
 	}
 
 	@Test
-	public void five_is_buzz(){
+	public void multiples_of_five_are_buzz(){
 		FizzBuzz fizzBuzz = new FizzBuzz();
 
 		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
 
 		assertThat(fizzbuzzed.get(4), is("Buzz"));
+		assertThat(fizzbuzzed.get(99), is("Buzz"));
 	}
-
-	@Test
-	public void ten_is_buzz(){
-		FizzBuzz fizzBuzz = new FizzBuzz();
-
-		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
-
-		assertThat(fizzbuzzed.get(9), is("Buzz"));
-	}
-	@Test
-	public void twenty_is_buzz(){
-		FizzBuzz fizzBuzz = new FizzBuzz();
-
-		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
-
-		assertThat(fizzbuzzed.get(19), is("Buzz"));
-	}
-
 
 	@Test
 	public void fizzbuzz_returns_a_hundred_numbers() {
