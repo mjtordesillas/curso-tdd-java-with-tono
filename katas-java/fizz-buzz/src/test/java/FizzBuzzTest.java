@@ -53,4 +53,13 @@ public class FizzBuzzTest {
 
 		assertThat(fizzbuzzed.get(9), is("Buzz"));
 	}
+
+	@Test
+	public void fizzbuzz_returns_a_hundred_numbers() {
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
+
+		assertThat(fizzbuzzed.size(), is(100));
+	}
 }
