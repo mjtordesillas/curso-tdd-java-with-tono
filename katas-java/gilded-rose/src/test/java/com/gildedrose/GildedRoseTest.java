@@ -7,12 +7,13 @@ import org.junit.jupiter.api.Test;
 public class GildedRoseTest {
 
   @Test
-  public void fix_me() {
-    Item[] items = new Item[]{new Item("foo", 0, 0)};
+  public void regular_items_sell_in_decreases_everyday() {
+    Item regularItem = new Item("foo", 1, 0);
+    Item[] items = new Item[]{regularItem};
     GildedRose app = new GildedRose(items);
 
     app.updateQuality();
 
-    assertEquals("fixme", app.items[0].name);
+    assertEquals(regularItem.sellIn, 0);
   }
 }
