@@ -76,4 +76,13 @@ public class FizzBuzzTest {
 		assertThat(fizzbuzzed.get(51), is("Buzz"));
 		assertThat(fizzbuzzed.get(58), is("Buzz"));
 	}
+
+	@Test
+	public void numbers_containing_five_and_three_are_fizzbuzz(){
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
+
+		assertThat(fizzbuzzed.get(52), is("FizzBuzz"));
+	}
 }
