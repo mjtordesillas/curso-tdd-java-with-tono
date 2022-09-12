@@ -16,4 +16,16 @@ public class GildedRoseTest {
 
     assertEquals(regularItem.sellIn, 0);
   }
+
+  @Test
+  public void regular_items_quality_decreases_everyday() {
+    Item regularItem = new Item("foo", 1, 1);
+    Item[] items = new Item[]{regularItem};
+    GildedRose app = new GildedRose(items);
+
+    app.updateQuality();
+
+    assertEquals(regularItem.quality, 0);
+  }
+
 }
