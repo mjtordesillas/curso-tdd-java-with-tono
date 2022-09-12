@@ -85,4 +85,13 @@ public class FizzBuzzTest {
 
 		assertThat(fizzbuzzed.get(52), is("FizzBuzz"));
 	}
+
+	@Test
+	public void numbers_multiples_of_five_and_containing_three_are_fizzbuzz(){
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
+
+		assertThat(fizzbuzzed.get(34), is("FizzBuzz"));
+	}
 }
