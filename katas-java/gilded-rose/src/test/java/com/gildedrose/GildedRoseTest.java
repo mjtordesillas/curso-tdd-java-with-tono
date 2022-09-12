@@ -75,6 +75,16 @@ public class GildedRoseTest {
     assertEquals(50, agedBrie.quality);
   }
 
+  @Test
+  public void sulfuras_does_not_expire() {
+    Item sulfuras = new Item("Sulfuras, Hand of Ragnaros", 1, 50);
+    GildedRose app = new GildedRose(new Item[]{sulfuras});
+
+    app.updateQuality();
+
+    assertEquals(1, sulfuras.sellIn);
+  }
+
 
 
   private Item regularItem(int sellIn, int quality) {
