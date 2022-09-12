@@ -16,4 +16,13 @@ public class FizzBuzzTest {
 
 		assertThat(fizzbuzzed.get(0), is("1"));
 	}
+
+	@Test
+	public void two_is_two() {
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
+
+		assertThat(fizzbuzzed.get(1), is("2"));
+	}
 }
