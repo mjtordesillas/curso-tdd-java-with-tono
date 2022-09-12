@@ -9,21 +9,13 @@ import java.util.List;
 public class FizzBuzzTest {
 
 	@Test
-	public void one_is_one() {
+	public void normal_numbers_up_to_four_as_themselves() {
 		FizzBuzz fizzBuzz = new FizzBuzz();
 
 		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
 
 		assertThat(fizzbuzzed.get(0), is("1"));
-	}
-
-	@Test
-	public void two_is_two() {
-		FizzBuzz fizzBuzz = new FizzBuzz();
-
-		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
-
-		assertThat(fizzbuzzed.get(1), is("2"));
+		assertThat(fizzbuzzed.get(3), is("4"));
 	}
 
 	@Test
@@ -33,16 +25,6 @@ public class FizzBuzzTest {
 		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
 
 		assertThat(fizzbuzzed.get(2), is("Fizz"));
-
-	}
-
-	@Test
-	public void four_is_four(){
-		FizzBuzz fizzBuzz = new FizzBuzz();
-
-		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
-
-		assertThat(fizzbuzzed.get(3), is("4"));
 
 	}
 }
