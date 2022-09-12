@@ -46,6 +46,16 @@ public class GildedRoseTest {
     assertEquals(regularItem.quality, 1);
   }
 
+  @Test
+  public void aged_brie_increases_quality_the_older_it_gets() {
+    Item agedBrie = new Item("Aged Brie", 1, 3);
+    GildedRose app = new GildedRose(new Item[]{agedBrie});
+
+    app.updateQuality();
+
+    assertEquals(agedBrie.quality, 4);
+  }
+
 
   private Item regularItem(int sellIn, int quality) {
     return new Item("foo", sellIn, quality);
