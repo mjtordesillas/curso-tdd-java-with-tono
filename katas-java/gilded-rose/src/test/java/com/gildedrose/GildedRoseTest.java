@@ -95,6 +95,16 @@ public class GildedRoseTest {
     assertEquals(25, sulfuras.quality);
   }
 
+  @Test
+  public void backstage_passes_are_worthless_after_the_concert() {
+    Item passes = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 25);
+    GildedRose app = new GildedRose(new Item[]{passes});
+
+    app.updateQuality();
+
+    assertEquals(0, passes.quality);
+  }
+
 
 
   private Item regularItem(int sellIn, int quality) {
