@@ -4,8 +4,11 @@ import java.util.List;
 public class FizzBuzz {
   public List<String> fizzBuzzle() {
     List<String> fizzBuzzed = new ArrayList<String>();
-    fizzBuzzed.add("1");
-    fizzBuzzed.add("2");
+    for(Integer number = 1; number <= 4; number++) {
+      if(number == 3) fizzBuzzed.add("Fizz");
+      else fizzBuzzed.add(number.toString());
+    }
+
     return fizzBuzzed;
   }
 }
