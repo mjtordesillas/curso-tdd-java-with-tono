@@ -9,8 +9,7 @@ public class GildedRoseTest {
   @Test
   public void regular_items_sell_in_decreases_everyday() {
     Item regularItem = regularItem(2, 0);
-    Item[] items = new Item[]{regularItem};
-    GildedRose app = new GildedRose(items);
+    GildedRose app = new GildedRose(new Item[]{regularItem});
 
     app.updateQuality();
 
@@ -20,8 +19,7 @@ public class GildedRoseTest {
   @Test
   public void regular_items_quality_decreases_everyday() {
     Item regularItem = regularItem(1, 1);
-    Item[] items = new Item[]{regularItem};
-    GildedRose app = new GildedRose(items);
+    GildedRose app = new GildedRose(new Item[]{regularItem});
 
     app.updateQuality();
 
@@ -31,8 +29,7 @@ public class GildedRoseTest {
   @Test
   public void the_quality_of_an_item_is_never_negative() {
     Item regularItem = regularItem(3, 0);
-    Item[] items = new Item[]{regularItem};
-    GildedRose app = new GildedRose(items);
+    GildedRose app = new GildedRose(new Item[]{regularItem});
 
     app.updateQuality();
 
