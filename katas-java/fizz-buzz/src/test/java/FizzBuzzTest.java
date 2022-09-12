@@ -87,11 +87,20 @@ public class FizzBuzzTest {
 	}
 
 	@Test
-	public void numbers_multiples_of_five_and_containing_three_are_fizzbuzz(){
+	public void multiples_of_five_containing_a_three_are_fizzbuzz(){
 		FizzBuzz fizzBuzz = new FizzBuzz();
 
 		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
 
 		assertThat(fizzbuzzed.get(34), is("FizzBuzz"));
+	}
+
+	@Test
+	public void multiples_of_three_containing_a_five_are_fizzbuzz(){
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
+
+		assertThat(fizzbuzzed.get(53), is("FizzBuzz"));
 	}
 }
