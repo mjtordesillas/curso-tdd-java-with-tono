@@ -9,13 +9,13 @@ import java.util.List;
 public class FizzBuzzTest {
 
 	@Test
-	public void normal_numbers_up_to_four_as_themselves() {
+	public void normal_numbers_up_to_eight_as_themselves() {
 		FizzBuzz fizzBuzz = new FizzBuzz();
 
 		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
 
 		assertThat(fizzbuzzed.get(0), is("1"));
-		assertThat(fizzbuzzed.get(3), is("4"));
+		assertThat(fizzbuzzed.get(7), is("8"));
 	}
 
 	@Test
