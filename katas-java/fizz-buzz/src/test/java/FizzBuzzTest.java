@@ -25,6 +25,14 @@ public class FizzBuzzTest {
 		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
 
 		assertThat(fizzbuzzed.get(2), is("Fizz"));
+	}
 
+	@Test
+	public void five_is_buzz(){
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> fizzbuzzed = fizzBuzz.fizzBuzzle();
+
+		assertThat(fizzbuzzed.get(4), is("Buzz"));
 	}
 }
