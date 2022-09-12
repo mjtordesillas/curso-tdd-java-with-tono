@@ -28,4 +28,15 @@ public class GildedRoseTest {
     assertEquals(regularItem.quality, 0);
   }
 
+  @Test
+  public void the_quality_of_an_item_is_never_negative() {
+    Item regularItem = new Item("foo", 1, 0);
+    Item[] items = new Item[]{regularItem};
+    GildedRose app = new GildedRose(items);
+
+    app.updateQuality();
+
+    assertEquals(regularItem.quality, 0);
+  }
+
 }
