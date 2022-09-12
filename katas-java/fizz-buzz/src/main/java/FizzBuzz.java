@@ -23,6 +23,6 @@ public class FizzBuzz {
   }
 
   private boolean isFizz(Integer number) {
-    return number % 3 == 0;
+    return number % 3 == 0 || number.toString().contains("3");
   }
 }
