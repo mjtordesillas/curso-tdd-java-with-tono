@@ -13,7 +13,7 @@ public class GildedRoseTest {
 
     app.updateQuality();
 
-    assertEquals(regularItem.sellIn, 1);
+    assertEquals(1, regularItem.sellIn);
   }
 
   @Test
@@ -23,7 +23,7 @@ public class GildedRoseTest {
 
     app.updateQuality();
 
-    assertEquals(regularItem.quality, 0);
+    assertEquals(0, regularItem.quality);
   }
 
   @Test
@@ -33,7 +33,7 @@ public class GildedRoseTest {
 
     app.updateQuality();
 
-    assertEquals(regularItem.quality, 0);
+    assertEquals(0, regularItem.quality);
   }
 
   @Test
@@ -43,7 +43,7 @@ public class GildedRoseTest {
 
     app.updateQuality();
 
-    assertEquals(regularItem.quality, 1);
+    assertEquals(1, regularItem.quality);
   }
 
   @Test
@@ -53,7 +53,7 @@ public class GildedRoseTest {
 
     app.updateQuality();
 
-    assertEquals(agedBrie.quality, 4);
+    assertEquals(4, agedBrie.quality);
   }
   @Test
   public void aged_brie_increases_quality_twice_as_fast_once_expired() {
@@ -62,7 +62,17 @@ public class GildedRoseTest {
 
     app.updateQuality();
 
-    assertEquals(agedBrie.quality, 5);
+    assertEquals(5, agedBrie.quality);
+  }
+
+  @Test
+  public void the_quality_of_an_item_is_never_more_than_50() {
+    Item agedBrie = new Item("Aged Brie", 1, 50);
+    GildedRose app = new GildedRose(new Item[]{agedBrie});
+
+    app.updateQuality();
+
+    assertEquals(50, agedBrie.quality);
   }
 
 
