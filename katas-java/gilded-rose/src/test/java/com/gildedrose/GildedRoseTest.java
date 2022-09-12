@@ -36,6 +36,16 @@ public class GildedRoseTest {
     assertEquals(regularItem.quality, 0);
   }
 
+  @Test
+  public void expired_items_degrade_twice_as_fast() {
+    Item regularItem = regularItem(-1, 3);
+    GildedRose app = new GildedRose(new Item[]{regularItem});
+
+    app.updateQuality();
+
+    assertEquals(regularItem.quality, 1);
+  }
+
 
   private Item regularItem(int sellIn, int quality) {
     return new Item("foo", sellIn, quality);
