@@ -76,6 +76,16 @@ public class GildedRoseTest {
   }
 
   @Test
+  public void the_quality_of_an_expired_age_brie_is_never_more_than_50() {
+    Item agedBrie = new Item("Aged Brie", 0, 50);
+    GildedRose app = new GildedRose(new Item[]{agedBrie});
+
+    app.updateQuality();
+
+    assertEquals(50, agedBrie.quality);
+  }
+
+  @Test
   public void sulfuras_does_not_expire() {
     Item sulfuras = new Item("Sulfuras, Hand of Ragnaros", 1, 50);
     GildedRose app = new GildedRose(new Item[]{sulfuras});
